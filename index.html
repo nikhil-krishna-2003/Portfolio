@@ -10,9 +10,11 @@
 <body>
     <header>
         <div class="header" id="header">
-            <div class="logo" id="logo">Nikhil.</div>
+            <div class="top-bar">
+                <div class="logo" id="logo">Nikhil.</div>
                 <div class="menu-icon" id="menu-icon">
-            <i class="fa-solid fa-bars"></i>
+                    <i class="fa-solid fa-bars"></i>
+                </div>
             </div>
             <nav class="navbar" id="navbar">
                 <a href="#home"><i class="fa-solid fa-house"></i> Home</a>
@@ -40,12 +42,19 @@
 </body>
 
 <script>
-
     const menuIcon = document.getElementById('menu-icon');
     const navbar = document.getElementById('navbar');
+    const navLinks = navbar.querySelectorAll('a'); // Select all nav links
 
     menuIcon.addEventListener('click', () => {
         navbar.classList.toggle('active');
+    });
+
+    // Hide navbar when a link is clicked
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navbar.classList.remove('active');
+        });
     });
 
     const roles = ["Frontend Developer", "Flutter Developer"];
