@@ -10,8 +10,11 @@
 <body>
     <header>
         <div class="header" id="header">
-            <div class="home-logo" id="home-logo">Nikhil.</div>
-            <nav class="navbar">
+            <div class="logo" id="logo">Nikhil.</div>
+                <div class="menu-icon" id="menu-icon">
+            <i class="fa-solid fa-bars"></i>
+            </div>
+            <nav class="navbar" id="navbar">
                 <a href="#home"><i class="fa-solid fa-house"></i> Home</a>
                 <a href="#about"><i class="fa-solid fa-user"></i> About</a>
                 <a href="#project"><i class="fa-solid fa-code"></i> Project</a>
@@ -19,7 +22,60 @@
             </nav>
         </div>
     </header>
-    <main></main>
+    <main>
+        <section class="home" id="home">
+            <div class="home-content">
+                <span id="h1">Hi, Myself</span>
+                <span id="name"> Nikhil Krishna</span>
+                <span id="role">I am <span id="role-animation"></span></span>
+                <div id="home-icons">
+                    <i class="fa-brands fa-github"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+            </div>
+        </section>
+    </main>
     <footer></footer>
 </body>
+
+<script>
+
+    const menuIcon = document.getElementById('menu-icon');
+    const navbar = document.getElementById('navbar');
+
+    menuIcon.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+    });
+
+    const roles = ["Frontend Developer", "Flutter Developer"];
+    let currentRole = 0;
+    let currentChar = 0;
+    let isDeleting = false;
+    const intro = document.getElementById("role-animation");
+
+    function typeEffect() {
+        const text = roles[currentRole];
+        if (isDeleting) {
+            currentChar--;
+        } else {
+            currentChar++;
+        }
+
+        intro.textContent = text.substring(0, currentChar);
+
+        if (!isDeleting && currentChar === text.length) {
+            isDeleting = true;
+            setTimeout(typeEffect, 1500); 
+        } else if (isDeleting && currentChar === 0) {
+            isDeleting = false;
+            currentRole = (currentRole + 1) % roles.length;
+            setTimeout(typeEffect, 300); 
+        } else {
+            setTimeout(typeEffect, isDeleting ? 50 : 100);
+        }
+    }
+
+    typeEffect();
+</script>
 </html>
