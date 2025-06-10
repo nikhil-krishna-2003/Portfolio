@@ -25,18 +25,44 @@
         </div>
     </header>
     <main>
+
+        <!-- HOME section -->
         <section class="home" id="home">
             <div class="home-content">
                 <span id="h1">Hi, Myself</span>
                 <span id="name"> Nikhil Krishna</span>
                 <span id="role">I am <span id="role-animation"></span></span>
                 <div id="home-icons">
-                    <i class="fa-brands fa-github"></i>
-                    <i class="fa-brands fa-linkedin"></i>
-                    <i class="fa-solid fa-envelope"></i>
+                    <a href="https://www.google.com/"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.google.com/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.google.com/"><i class="fa-solid fa-envelope"></i></a>
                 </div>
             </div>
         </section>
+
+        <!-- About section -->
+        <section class="about" id="about">
+            <div class="about-content">
+                <div class="profile-picture" id="profile-picture">
+                    <img src="Images/Profile picture.jpg" alt="Profile Picture">
+                </div>
+                <div class="about-details" id="about-details">
+                    <h1 class="h1-about">Nikhil Krishna</h1>
+                    <h3 class="h3-about">Frontend Developer | Flutter Developer</h3>
+                    <p>
+                        Passionate developer creating beautiful, functional digital experiences. 
+                        Specializing in frontend technologies and Flutter development to build responsive and engaging applications.
+                    </p>
+                    <span class="tech-skills">
+                        <p><b>Languages:</b> Python, Java, C, HTML/CSS, JavaScript, Mysql, MongoDB, Flutter <br></p>
+                        <p><b>Developer Tools:</b> VS Code, Git, Metasploit, Android Studio <br></p>
+                        <p><b>Technologies/Frameworks:</b> Linux, Kali Linux, GitHub, Node.js</p>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+
     </main>
     <footer></footer>
 </body>
@@ -44,13 +70,12 @@
 <script>
     const menuIcon = document.getElementById('menu-icon');
     const navbar = document.getElementById('navbar');
-    const navLinks = navbar.querySelectorAll('a'); // Select all nav links
+    const navLinks = navbar.querySelectorAll('a');
 
     menuIcon.addEventListener('click', () => {
         navbar.classList.toggle('active');
     });
 
-    // Hide navbar when a link is clicked
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             navbar.classList.remove('active');
