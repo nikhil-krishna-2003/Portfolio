@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Monsieur+La+Doulaise&display=swap');
+
+:root {
+    --text-color: hsl(0, 0%, 96%);
+    --accent: hsl(160, 100%, 50%);
+    --hover-bg: hsl(160, 100%, 60%);
+    --hover-text: hsl(0, 0%, 5%);
+    --background-dark: hsl(210, 40%, 10%);
+    --gradient-dark: linear-gradient(to right, #000428, #004e92);
+}
+
+body {
+    background-color: var(--background-dark);
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header {
+    background: var(--gradient-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    color: var(--text-color);
+    box-shadow: 0 4px 20px #00ffcc33;
+}
+
+header .home-logo {
+    font-family: "Monsieur La Doulaise", cursive;
+    font-size: 35px;
+    text-shadow: 3px 3px 8px #00ffcc, -3px -3px 8px #ff0088;
+}
+
+header .home-logo::first-letter {
+    font-size: 50px;
+}
+
+header a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 8px 16px;
+    margin: 0 8px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+header a:hover, header a:focus {
+    background: var(--hover-bg);
+    color: var(--hover-text);
+    box-shadow: 0 6px 20px rgba(0, 255, 204, 0.5);
+    transform: scale(1.15);
+    cursor: pointer;
+}
